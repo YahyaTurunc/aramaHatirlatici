@@ -1,11 +1,15 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, Button } from 'react-native';
 
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-
+// import {Linking} from 'react-native'
+import * as Linking from 'expo-linking';
 export default function HomeScreen() {
+  const handleCall = () => {
+    Linking.openURL('tel:234246234546');
+  };
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#A1CEDC', dark: '#1D3D47' }}
@@ -17,6 +21,7 @@ export default function HomeScreen() {
       }>
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Welcome!</ThemedText>
+        <Button title="Aramak için tıklayın" onPress={handleCall} />
         <HelloWave />
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
@@ -32,6 +37,7 @@ export default function HomeScreen() {
             })}
           </ThemedText>{' '}
           to open developer tools.
+
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
