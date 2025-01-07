@@ -19,18 +19,18 @@ export default function HomeScreen() {
           style={styles.reactLogo}
         />
       }
-      >
+    >
       <ThemedView className="">
-        <TouchableOpacity 
-        // onPress={handleCall}
-        className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center">
-        <Link href="/intro" className="text-white text-lg font-bold">Aramak için tıklayın</Link>
+        <TouchableOpacity
+          onPress={handleCall}
+          className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center">
+          <Text className="text-slate-200 dark:text-black text-lg font-bold">Aramak için tıklayın</Text>
         </TouchableOpacity>
         <ThemedText className="text-center mt-10 text-black bg-slate-200 dark:bg-gray-700 p-4 rounded-lg">
           Merhaba, Dünya!af
         </ThemedText>
       </ThemedView>
-     
+
     </ParallaxScrollView>
   );
 }

@@ -12,7 +12,7 @@ export default function WelcomeScreen() {
       
                   {/* background image */}
                   <Image
-                      source={require('../../assets/images/welcome.png')}
+                      source={require('../assets/images/welcome.png')}
                       className="h-full w-full absolute"
                   />
       

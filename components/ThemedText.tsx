@@ -5,6 +5,7 @@ import { useThemeColor } from '@/hooks/useThemeColor';
 export type ThemedTextProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
+  className?: string;
   type?: 'default' | 'title' | 'defaultSemiBold' | 'subtitle' | 'link';
 };
 
@@ -12,6 +13,7 @@ export function ThemedText({
   style,
   lightColor,
   darkColor,
+  className,
   type = 'default',
   ...rest
 }: ThemedTextProps) {
@@ -19,6 +21,7 @@ export function ThemedText({
 
   return (
     <Text
+    className={className}
       style={[
         { color },
         type === 'default' ? styles.default : undefined,

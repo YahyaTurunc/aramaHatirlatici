@@ -28,15 +28,17 @@ export default function RootLayout() {
   }
 
   return (
-     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
 
       <Stack
         screenOptions={{
-          headerShown: false,
+          headerShown: false, // Hide headers
         }}
-        initialRouteName="intro" // İlk rotayı tanımlayın
-      />
-       <StatusBar style="auto" />
-  </ThemeProvider> 
+
+      >
+        <Stack.Screen name="index" options={{ headerShown: false }} />
+      </Stack>
+      <StatusBar style="auto" />
+    </ThemeProvider>
   );
 }

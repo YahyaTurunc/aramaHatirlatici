@@ -23,7 +23,7 @@ export default function AboutScreen() {
                 <Text className="text-neutral-200  font-medium" style={{  }}>
                     Merhaa
                 </Text>
-                <TouchableOpacity onPress={()=>router.replace("/(tabs)")} className="bg-red-500 mx-auto p-3 px-12 rounded-full"  >
+                <TouchableOpacity onPress={()=>router.replace("/(tabs)/home")} className="bg-red-500 mx-auto p-3 px-12 rounded-full"  >
                     <Text className=" font-bold text-white" style={{  }}>
                         Hadi Gidelim
                     </Text>
