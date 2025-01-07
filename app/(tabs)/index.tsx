@@ -4,6 +4,7 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import { Link } from 'expo-router';
 // import * as Linking from 'expo-linking';
 export default function HomeScreen() {
   const handleCall = () => {
@@ -20,10 +21,12 @@ export default function HomeScreen() {
       }
       >
       <ThemedView className="">
-        <TouchableOpacity onPress={handleCall} className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center">
-        <ThemedText className="text-white text-lg font-bold">Aramak için tıklayın</ThemedText>
+        <TouchableOpacity 
+        // onPress={handleCall}
+        className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center">
+        <Link href="/intro" className="text-white text-lg font-bold">Aramak için tıklayın</Link>
         </TouchableOpacity>
-        <ThemedText className="text-center">
+        <ThemedText className="text-center mt-10 text-black bg-slate-200 dark:bg-gray-700 p-4 rounded-lg">
           Merhaba, Dünya!af
         </ThemedText>
       </ThemedView>
