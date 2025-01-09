@@ -19,7 +19,7 @@ export default function WelcomeScreen() {
                   {/* content & gradient */}
                   <View className="p-5 pb-10 space-y-8">
                       
-                      <Text className="text-white font-bold text-5xl" style={{  }}>
+                      <Text className="text-white font-bold text-6xl" style={{  }}>
                           Welcome
                       </Text>
                       <Text className="text-neutral-200  font-medium" style={{  }}>

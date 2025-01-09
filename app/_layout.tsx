@@ -3,7 +3,7 @@ import { useFonts } from 'expo-font';
 import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import 'react-native-reanimated';
 import "../global.css"
 import { useColorScheme } from '@/hooks/useColorScheme';
@@ -16,7 +16,7 @@ export default function RootLayout() {
   const [loaded] = useFonts({
     SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
   });
-
+  const [hasSeenIndex, setHasSeenIndex] = useState(false);
   useEffect(() => {
     if (loaded) {
       SplashScreen.hideAsync();
@@ -36,7 +36,7 @@ export default function RootLayout() {
         }}
 
       >
-        <Stack.Screen name="index" options={{ headerShown: false }} />
+        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>

@@ -10,7 +10,7 @@ export default function AboutScreen() {
 
             {/* background image */}
             <Image
-                source={require('../../assets/images/welcome.png')}
+                source={require('../../assets/images/_welcome.png')}
                 className="h-full w-full absolute"
             />
 
@@ -18,11 +18,11 @@ export default function AboutScreen() {
             <View className="p-5 pb-10 space-y-8">
                 
                 <Text className="text-white font-bold text-5xl" style={{  }}>
-                    Merhabaadfaos
+                    Biz burada sevdiklerinizi hatırlamanız için varız
                 </Text>
-                <Text className="text-neutral-200  font-medium" style={{  }}>
+                {/* <Text className="text-neutral-200  font-medium" style={{  }}>
                     Merhaa
-                </Text>
+                </Text> */}
                 <TouchableOpacity onPress={()=>router.replace("/(tabs)/home")} className="bg-red-500 mx-auto p-3 px-12 rounded-full"  >
                     <Text className=" font-bold text-white" style={{  }}>
                         Hadi Gidelim

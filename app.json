@@ -1,21 +1,27 @@
 {
   "expo": {
     "name": "sila",
+    "displayName": "Hatırlatıcı",
     "slug": "sila",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "icon": "./assets/images/appstore.png",
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "infoPlist": {
+        "NSContactsUsageDescription": "Rehber bilgilerinize erişmek istiyoruz."
+      },
+      "bundleIdentifier": "com.anonymous.sila"
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/appstore.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.anonymous.sila"
     },
     "web": {
       "bundler": "metro",

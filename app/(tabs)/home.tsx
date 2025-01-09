@@ -4,9 +4,10 @@ import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
-import { Link } from 'expo-router';
+import { Link, useRouter } from 'expo-router';
 // import * as Linking from 'expo-linking';
-export default function HomeScreen() {
+export default function HomeScreen() {   
+   const router = useRouter();
   const handleCall = () => {
     Linking.openURL('tel:1234567890');
   };
@@ -25,6 +26,11 @@ export default function HomeScreen() {
           onPress={handleCall}
           className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center">
           <Text className="text-slate-200 dark:text-black text-lg font-bold">Aramak için tıklayın</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={()=>router.replace("/intro/ContactScreen")}
+          className="bg-blue-500 py-3 px-6 rounded-lg flex items-center justify-center mt-10">
+          <Text className="text-slate-200 dark:text-black text-lg font-bold">1contact sayfası</Text>
         </TouchableOpacity>
         <ThemedText className="text-center mt-10 text-black bg-slate-200 dark:bg-gray-700 p-4 rounded-lg">
           Merhaba, Dünya!af

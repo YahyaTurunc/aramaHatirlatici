@@ -6,6 +6,8 @@ export default function IntroLayout() {
       screenOptions={{
         headerShown: false, // Başlıkları gizle
       }}
-    />
+    >
+      <Stack.Screen name="ContactScreen" options={{ headerShown: true , title: 'Seçim'}}/>
+    </Stack>
   );
 }
