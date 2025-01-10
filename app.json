@@ -12,11 +12,13 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
+        "NSUserNotificationUsageDescription": "Bildirim için izniniz gerekiyor.",
         "NSContactsUsageDescription": "Rehber bilgilerinize erişmek istiyoruz."
       },
       "bundleIdentifier": "com.anonymous.sila"
     },
     "android": {
+      "permissions": ["NOTIFICATIONS"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/appstore.png",
         "backgroundColor": "#ffffff"
