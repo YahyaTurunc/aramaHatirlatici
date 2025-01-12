@@ -1,6 +1,10 @@
 {
   "cli": {
+<<<<<<< HEAD
     "version": ">= 14.4.0",
+=======
+    "version": ">= 14.3.0",
+>>>>>>> refs/remotes/origin/main
     "appVersionSource": "remote"
   },
   "build": {

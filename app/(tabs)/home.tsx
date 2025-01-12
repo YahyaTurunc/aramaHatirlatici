@@ -62,6 +62,31 @@ export default function HomeScreen() {
   const handleCall = () => {
     Linking.openURL("tel:1234567890");
   };
+  // First, set the handler that will cause the notification to show the alert
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
+  // Bildirim gönder fonksiyonu
+  const sendNotification = async () => {
+    try {
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "📱 Bildirim!",
+          body: "Bu bir test bildirimidir.",
+          sound: "default",
+        },
+        trigger: { seconds: 2 },
+      });
+    } catch (error) {
+      console.log("bildirim gönderilemedi.", error);
+      Alert.alert("Hata", "Bildirim gönderilemedi.");
+    }
+  };
+
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
