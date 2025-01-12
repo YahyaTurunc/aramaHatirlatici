@@ -44,7 +44,14 @@ export default function HomeScreen() {
   const handleCall = () => {
     Linking.openURL("tel:1234567890");
   };
-
+  // First, set the handler that will cause the notification to show the alert
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
   // Bildirim gönder fonksiyonu
   const sendNotification = async () => {
     try {
@@ -56,8 +63,8 @@ export default function HomeScreen() {
         },
         trigger: { seconds: 2 },
       });
-      Alert.alert("Başarılı", "Bildirim gönderildi.");
     } catch (error) {
+      console.log("bildirim gönderilemedi.", error);
       Alert.alert("Hata", "Bildirim gönderilemedi.");
     }
   };
