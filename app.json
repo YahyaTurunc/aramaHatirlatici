@@ -18,7 +18,9 @@
       "bundleIdentifier": "com.anonymous.sila"
     },
     "android": {
-      "permissions": ["NOTIFICATIONS"],
+      "permissions": [
+        "NOTIFICATIONS"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/appstore.png",
         "backgroundColor": "#ffffff"
@@ -44,6 +46,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "2c8bead7-5bab-491a-ae35-731432a8eccc"
+      }
+    },
+    "owner": "yahyaturunc"
   }
 }

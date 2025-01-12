@@ -1,7 +1,11 @@
 PODS:
   - boost (1.84.0)
   - DoubleConversion (1.1.6)
-  - EXConstants (17.0.3):
+  - EXApplication (6.0.2):
+    - ExpoModulesCore
+  - EXConstants (17.0.4):
+    - ExpoModulesCore
+  - EXNotifications (0.29.12):
     - ExpoModulesCore
   - Expo (52.0.23):
     - ExpoModulesCore
@@ -1829,7 +1833,9 @@ PODS:
 DEPENDENCIES:
   - boost (from `../node_modules/react-native/third-party-podspecs/boost.podspec`)
   - DoubleConversion (from `../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec`)
+  - EXApplication (from `../node_modules/expo-application/ios`)
   - EXConstants (from `../node_modules/expo-constants/ios`)
+  - EXNotifications (from `../node_modules/expo-notifications/ios`)
   - Expo (from `../node_modules/expo`)
   - ExpoAsset (from `../node_modules/expo-asset/ios`)
   - ExpoBlur (from `../node_modules/expo-blur/ios`)
@@ -1924,8 +1930,12 @@ EXTERNAL SOURCES:
     :podspec: "../node_modules/react-native/third-party-podspecs/boost.podspec"
   DoubleConversion:
     :podspec: "../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec"
+  EXApplication:
+    :path: "../node_modules/expo-application/ios"
   EXConstants:
     :path: "../node_modules/expo-constants/ios"
+  EXNotifications:
+    :path: "../node_modules/expo-notifications/ios"
   Expo:
     :path: "../node_modules/expo"
   ExpoAsset:
@@ -2093,7 +2103,9 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost: 1dca942403ed9342f98334bf4c3621f011aa7946
   DoubleConversion: f16ae600a246532c4020132d54af21d0ddb2a385
-  EXConstants: 277129d9a42ba2cf1fad375e7eaa9939005c60be
+  EXApplication: 4c72f6017a14a65e338c5e74fca418f35141e819
+  EXConstants: 6b8c5653492349b3c3fe6b905c556bc45b360405
+  EXNotifications: d454fd3f5340d728f1cb652807bb9c9ef16a7bda
   Expo: cac199e7cbd1f9b5ae7047c4294a372d6ff28a88
   ExpoAsset: 6f7a8887cbb9fb39fdb0808e7f6f74ba0e1ae9b6
   ExpoBlur: 2b92367da8158eeaee9bfa940d82512a09c8e0c6

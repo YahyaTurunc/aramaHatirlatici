@@ -17,51 +17,51 @@ import { useEffect } from "react";
 
 export default function HomeScreen() {
   const router = useRouter();
-
-  // Bildirim izni al (daha önceki sayfalardan mı almalıyız?)
   useEffect(() => {
     const requestPermissions = async () => {
       const { status } = await Notifications.requestPermissionsAsync();
-      if (status !== "granted") {
-        Alert.alert(
-          "İzin Gerekli",
-          "Bildirim göndermek için izin vermelisiniz.",
-        );
-      }
+      console.log("Bildirim izni durumu:", status);
+      // if (status !== "granted") {
+      //   Alert.alert(
+      //     "İzin Gerekli",
+      //     "Bildirim göndermek için izin vermelisiniz."
+      //   );
+      //   return;
+      // }
     };
     requestPermissions();
 
-    if (Platform.OS === "android") {
-      Notifications.setNotificationChannelAsync("default", {
-        name: "default",
-        importance: Notifications.AndroidImportance.HIGH,
-        sound: "default",
-      });
-    }
+    // Android için kanal ayarı
+    // if (Platform.OS === "android") {
+    //   Notifications.setNotificationChannelAsync("default", {
+    //     name: "default",
+    //     importance: Notifications.AndroidImportance.HIGH,
+    //     sound: "default",
+    //   });
+    // }
   }, []);
 
-  // Telefon araması başlat
+  const sendNotification = async () => {
+    try {
+      console.log("Bildirim gönderilmeye çalışılıyor...");
+      await Notifications.scheduleNotificationAsync({
+        content: {
+          title: "📱 Test Bildirimi",
+          body: "Bu bir lokal bildirimdir.",
+        },
+        trigger: { seconds: 1 }, // 1 saniye sonra tetikle
+      });
+      Alert.alert("Başarılı", "Bildirim gönderildi.");
+      console.log("Bildirim gönderildi!");
+    } catch (error) {
+      Alert.alert("Hata", `Bildirim gönderilemedi: ${error.message}`);
+      console.log("Hata:", error);
+    }
+  };
+  
   const handleCall = () => {
     Linking.openURL("tel:1234567890");
   };
-
-  // Bildirim gönder fonksiyonu
-  const sendNotification = async () => {
-    try {
-      await Notifications.scheduleNotificationAsync({
-        content: {
-          title: "📱 Bildirim!",
-          body: "Bu bir test bildirimidir.",
-          sound: "default",
-        },
-        trigger: { seconds: 2 },
-      });
-      Alert.alert("Başarılı", "Bildirim gönderildi.");
-    } catch (error) {
-      Alert.alert("Hata", "Bildirim gönderilemedi.");
-    }
-  };
-
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: "#A1CEDC", dark: "#1D3D47" }}
