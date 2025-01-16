@@ -48,23 +48,6 @@ export default function HomeScreen() {
       shouldSetBadge: false,
     }),
   });
-  const sendNotification = async () => {
-    try {
-      console.log("Bildirim gönderilmeye çalışılıyor...");
-      await Notifications.scheduleNotificationAsync({
-        content: {
-          title: "📱 Test Bildirimi",
-          body: "Bu bir lokal bildirimdir.",
-        },
-        trigger: { seconds: 1 }, // 1 saniye sonra tetikle
-      });
-      Alert.alert("Başarılı", "Bildirim gönderildi.");
-      console.log("Bildirim gönderildi!");
-    } catch (error) {
-      Alert.alert("Hata", `Bildirim gönderilemedi: ${error.message}`);
-      console.log("Hata:", error);
-    }
-  };
 
   const handleCall = () => {
     Linking.openURL("tel:1234567890");
