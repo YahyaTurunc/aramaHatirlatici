@@ -17,7 +17,7 @@
       "bundleIdentifier": "com.anonymous.sila"
     },
     "android": {
-      "permissions": ["READ_CONTACTS", "NOTIFICATIONS"],
+      "permissions": ["NOTIFICATIONS", "READ_CALL_LOG", "READ_CONTACTS"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/appstore.png",
         "backgroundColor": "#ffffff"

@@ -20,7 +20,7 @@ export default function HomeScreen() {
   useEffect(() => {
     const requestPermissions = async () => {
       const { status } = await Notifications.requestPermissionsAsync();
-      console.log("Bildirim izni durumu:", status);
+      // console.log("Bildirim izni durumu:", status);
       // if (status !== "granted") {
       //   Alert.alert(
       //     "İzin Gerekli",
@@ -40,7 +40,14 @@ export default function HomeScreen() {
     //   });
     // }
   }, []);
-
+  // First, set the handler that will cause the notification to show the alert
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    }),
+  });
   const sendNotification = async () => {
     try {
       console.log("Bildirim gönderilmeye çalışılıyor...");
@@ -58,7 +65,7 @@ export default function HomeScreen() {
       console.log("Hata:", error);
     }
   };
-  
+
   const handleCall = () => {
     Linking.openURL("tel:1234567890");
   };
